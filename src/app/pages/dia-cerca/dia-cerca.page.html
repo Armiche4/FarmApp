@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Farmacias</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let farmacia of farmacias" [routerLink]="['/dia-cerca',farmacia.ruta]">
+      
+      <ion-label >
+        <p >Telefono: {{farmacia.TELEFONO}}</p>
+       <h2>{{farmacia.NOMBRE}}</h2>
+       
+       <h3 [innerHTML]="dia" > </h3><h3 >{{farmacia.dia}} </h3>
+      
+       <p>{{farmacia.DIRECCION}}</p>
+       <ion-item  color="tertiary" >
+        <ion-label  class="ion-text-center"  >
+        <h2 >{{farmacia.distancia}} metros</h2>
+        </ion-label>
+      </ion-item>
+      </ion-label>
+    
+      
+    </ion-item>
+  </ion-list>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="secondary" (click)="IrMapa()">
+      <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

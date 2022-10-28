@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Modificar medicina</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/receta"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      
+<ion-card>
+<ion-card-content>
+<ion-input  *ngIf="medicina"   type="text"  [(ngModel)]=medicina.cn >
+  
+</ion-input>
+<ion-input  *ngIf="medicina" type="text" [(ngModel)]=medicina.nombre >
+
+</ion-input>
+
+<ion-img *ngIf="medicina" [src]="medicina.foto"></ion-img> 
+<ion-input  *ngIf="medicina"  type="text" [(ngModel)]=medicina.foto>
+
+</ion-input>
+
+<ion-button color="tertiary" (click)="Modificar()">
+  Guardar
+</ion-button>
+
+</ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+
+
+
+
+</ion-content>

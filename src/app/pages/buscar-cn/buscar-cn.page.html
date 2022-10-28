@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Introduzca un cn</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+    <input  name="cn" ngModel required >
+    
+    <button ion-button type="submit" block>Buscar</button>
+  </form>
+  
+  <ng-template [ngIf]="show">
+
+    <ion-list>
+      <ion-item color="secondary">
+      
+        <ion-label>{{medicamento.nombre}}</ion-label>
+      </ion-item>
+      <ion-item>
+  
+        <ion-label>{{medicamento.pactivos}}</ion-label>
+      </ion-item>
+      <ion-item >
+       <ion-label>{{medicamento.docs[0].url}}</ion-label>
+      </ion-item >
+      <ion-item>
+        <ion-label>Administración: {{medicamento.viasAdministracion[0].nombre}}</ion-label>
+       </ion-item>
+       <ion-item >
+        <ion-label>Presentación:{{medicamento.formaFarmaceutica.nombre}}</ion-label>
+       </ion-item>
+       <ion-item color="tertiary">
+        <ion-label>Dosis: {{medicamento.dosis}}</ion-label>
+       </ion-item>
+    </ion-list>
+
+  </ng-template>
+
+
+
+</ion-content>

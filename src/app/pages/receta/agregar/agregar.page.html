@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Añadir una nueva receta</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/receta"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+<ion-card>
+<ion-card-content>
+<ion-input type="text" placeholder="Escribe el cip de la tarjeta"[(ngModel)]="usuario.cip">
+
+</ion-input>
+<ion-input type="text" placeholder="Escribe el nombre" [(ngModel)]="usuario.nombre">
+
+</ion-input>
+<ion-input type="text" placeholder="url de la imagen de la tarjeta" [(ngModel)]="usuario.foto">
+
+</ion-input>
+<ion-button color="tertiary" (click)="addUser()">
+  Guardar
+</ion-button>
+</ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+</ion-content>

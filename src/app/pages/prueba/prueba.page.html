@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Medicamentos con problemas de suministro</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+
+ 
+
+  <ion-toolbar color="tertiary">
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+  
+  <ion-list>
+    <ion-item *ngFor="let medicamento of medicamentos" [routerLink]="['/prueba', medicamento.cn]">
+     
+      <ion-label >
+        <p >CN: {{medicamento.cn}}</p>
+       <h3>{{medicamento.nombre}}</h3>
+        
+      </ion-label>
+   
+    </ion-item>
+  </ion-list>
+
+
+
+</ion-content>
